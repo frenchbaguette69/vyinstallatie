@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ServicePackage {
+  id          String   @id @default(cuid())
+  name        String   // bijv. "Onderhoud Basis"
+  description String   // korte ondertitel, bijv. "Jaarlijkse onderhoudsbeurt"
+  price       Float    // bijv. 89.0
+  priceUnit   String   // bijv. "jaar" of "uur"
+  features    String[] // array van punten zoals "Ketelreiniging", "24/7 storingsdienst"
+  mostPopular Boolean  @default(false)
+  phoneCTA    Boolean  @default(false) // voor spoeddienst direct bellen
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String           // Titel van het project
+  slug        String   @unique // Voor gebruik in URL, zoals /projecten/woonhuis-roermond
+  description String           // Korte omschrijving of intro
+  content     String?          // Uitgebreide uitleg of markdown-HTML
+  location    String?          // Bijv. "Roermond"
+  date        DateTime         // Uitvoeringsdatum van het project
+  coverImage  String?          // URL of path naar hoofdfoto
+  gallery     String[]         // Array van extra foto's (optioneel)
+  featured    Boolean  @default(false) // Voor tonen op de homepage
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id       String   @id @default(cuid())
+  email    String   @unique
+  name     String
+  password String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
