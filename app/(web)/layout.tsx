@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google"
 import "../globals.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/sonner"
 import WhatsAppFloatingButton from "@/components/WhatsappFloatingButton"
 
 const poppins = Poppins({
@@ -14,6 +14,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vyinstallatie.nl"),
   title: "VY Installatie - CV Monteur Roermond | Installatie, Onderhoud & Reparatie",
   description:
     "Professionele CV installatie, onderhoud en reparatie in Roermond. ✓ 24/7 spoeddienst ✓ 15+ jaar ervaring ✓ Gecertificeerde monteurs ✓ 5 jaar garantie. Bel nu!",
@@ -85,7 +86,7 @@ const jsonLd = {
   url: "https://vyinstallatie.nl",
   telephone: "+31630798400",
   email: "vyinstallatie@gmail.com",
-    address: {
+  address: {
     "@type": "PostalAddress",
     streetAddress: "Donderbergweg 106",
     postalCode: "6043JJ",
@@ -111,10 +112,7 @@ const jsonLd = {
   priceRange: "€€",
   image: "https://vyinstallatie.nl/images/logo.png",
   logo: "https://vyinstallatie.nl/images/logo.png",
-  sameAs: [
-    "https://www.facebook.com/vyinstallatie",
-    "https://www.instagram.com/vyinstallatie"
-  ],
+  sameAs: ["https://www.facebook.com/vyinstallatie", "https://www.instagram.com/vyinstallatie"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "CV Diensten",
@@ -150,7 +148,7 @@ const jsonLd = {
     ratingValue: "4.8",
     reviewCount: "127",
   },
-};
+}
 
 export default function RootLayout({
   children,

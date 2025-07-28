@@ -2,10 +2,12 @@ import { type NextRequest, NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
 // GET - Specifieke service package ophalen
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params
+
     const servicePackage = await prisma.servicePackage.findUnique({
-      where: { id: params.id },
+      where: { id },
     })
 
     if (!servicePackage) {
@@ -20,8 +22,9 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 }
 
 // PUT - Service package bijwerken
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params
     const body = await request.json()
     const { name, description, price, priceUnit, features, mostPopular, phoneCTA } = body
 
@@ -35,14 +38,14 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       await prisma.servicePackage.updateMany({
         where: {
           mostPopular: true,
-          NOT: { id: params.id },
+          NOT: { id },
         },
         data: { mostPopular: false },
       })
     }
 
     const servicePackage = await prisma.servicePackage.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         name,
         description,
@@ -62,10 +65,12 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 }
 
 // DELETE - Service package verwijderen
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params
+
     await prisma.servicePackage.delete({
-      where: { id: params.id },
+      where: { id },
     })
 
     return NextResponse.json({ message: "Service package deleted successfully" })

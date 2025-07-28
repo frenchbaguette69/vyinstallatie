@@ -2,10 +2,12 @@ import { type NextRequest, NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
 // GET - Specifiek project ophalen
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params
+
     const project = await prisma.project.findUnique({
-      where: { id: params.id },
+      where: { id },
     })
 
     if (!project) {
@@ -20,8 +22,9 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 }
 
 // PUT - Project bijwerken
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params
     const body = await request.json()
     const { title, slug, description, content, location, date, coverImage, gallery, featured } = body
 
@@ -35,7 +38,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       where: { slug },
     })
 
-    if (existingProject && existingProject.id !== params.id) {
+    if (existingProject && existingProject.id !== id) {
       return NextResponse.json({ error: "Slug already exists" }, { status: 400 })
     }
 
@@ -44,14 +47,14 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       await prisma.project.updateMany({
         where: {
           featured: true,
-          NOT: { id: params.id },
+          NOT: { id },
         },
         data: { featured: false },
       })
     }
 
     const project = await prisma.project.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         title,
         slug,
@@ -73,10 +76,12 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 }
 
 // DELETE - Project verwijderen
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params
+
     await prisma.project.delete({
-      where: { id: params.id },
+      where: { id },
     })
 
     return NextResponse.json({ message: "Project deleted successfully" })

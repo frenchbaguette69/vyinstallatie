@@ -2,10 +2,12 @@ import { type NextRequest, NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
 // GET - Project ophalen via slug
-export async function GET(request: NextRequest, { params }: { params: { slug: string } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
   try {
+    const { slug } = await params
+
     const project = await prisma.project.findUnique({
-      where: { slug: params.slug },
+      where: { slug },
     })
 
     if (!project) {
