@@ -76,7 +76,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center md:text-left mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Onze Specialisaties</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
             <p className="text-xl text-gray-600 max-w-3xl">
               Ontdek onze complete dienstverlening voor al uw verwarmings- en ventilatiebehoeften
             </p>
@@ -88,7 +88,7 @@ export default function HomePage() {
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2 border-2 border-transparent group-hover:border-red-600">
                 <div className="relative h-64">
                   <Image
-                    src="/placeholder.svg?height=256&width=400"
+                    src="/images/cvketel.jpg"
                     alt="CV Ketel Installatie"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -134,7 +134,7 @@ export default function HomePage() {
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2 border-2 border-transparent group-hover:border-red-600">
                 <div className="relative h-64">
                   <Image
-                    src="/placeholder.svg?height=256&width=400"
+                    src="/images/vloerverwarming.jpg"
                     alt="Vloerverwarming Installatie"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -180,7 +180,7 @@ export default function HomePage() {
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2 border-2 border-transparent group-hover:border-red-600">
                 <div className="relative h-64">
                   <Image
-                    src="/placeholder.svg?height=256&width=400"
+                    src="/images/wtw.jpg"
                     alt="WTW Installatie"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -226,74 +226,88 @@ export default function HomePage() {
       </section>
 
 <section id="over-ons" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <Badge className="bg-red-100 text-red-800 px-4 py-2 mb-4">Over VY Installatie</Badge>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">15 Jaar Ervaring in CV Installaties</h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Wij zijn een gespecialiseerd bedrijf in de installatie, het onderhoud en de reparatie van CV systemen.
-                  Met onze jarenlange ervaring en vakkennis zorgen wij ervoor dat uw woning altijd comfortabel warm is.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Ons team bestaat uit gecertificeerde monteurs die up-to-date zijn met de nieuwste technieken en
-                  regelgeving. Wij werken alleen met kwaliteitsproducten van bekende merken.
-                </p>
-              </div>
+  <div className="container mx-auto px-4">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="space-y-8">
+        <div>
+          <Badge className="bg-red-100 text-red-800 px-4 py-2 mb-4">Onderhoud aan uw CV-ketel</Badge>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            Wat doen wij bij VY INSTALLATIE tijdens het onderhoud?
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Om uw CV-ketel in topconditie te houden, is regelmatig onderhoud noodzakelijk.
+            Wij adviseren om periodiek onderhoud uit te laten voeren. De exacte onderhoudsfrequentie hangt af van het gebruik van de ketel.
+            Daarom raden wij aan om één jaar na installatie een eerste inspectie te laten uitvoeren.
+            Zo kunnen wij bepalen hoe vaak onderhoud in uw situatie nodig is. Heeft u een ouder toestel?
+            Ook dan kunt u uiteraard bij ons terecht.
+          </p>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Wat doet onze monteur tijdens het onderhoud?</h3>
+          <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
+            <li>De monteur vraagt bewoners naar storingen of onregelmatigheden.</li>
+            <li>Er wordt gecontroleerd of de warmwatervoorziening goed werkt (temperatuur en hoeveelheid).</li>
+            <li>De brander wordt grondig gereinigd.</li>
+            <li>We voeren metingen uit, waaronder CO₂-metingen in de rookgasafvoer, ter voorkoming van koolmonoxidevergiftiging.</li>
+            <li>Er wordt gecontroleerd op veiligheidseisen zoals gasaansluiting en afvoerkanaal.</li>
+            <li>Onderhoudsgevoelige onderdelen worden schoongemaakt.</li>
+            <li>Slijtende onderdelen (zoals pakkingen en ontsteekpennen) worden indien nodig vervangen.</li>
+            <li>Defecte onderdelen worden vervangen.</li>
+            <li>Uitleg over zelf bijvullen en radiatoren ontluchten indien gewenst.</li>
+            <li>Na afloop vullen wij een checklist in en plaatsen een keuringssticker (belangrijk voor de verzekering).</li>
+          </ul>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Gecertificeerde monteurs – voor uw veiligheid</h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Sinds 2022 mogen alleen vakbekwame installatiemonteurs onderhoud uitvoeren aan gasverbrandingsinstallaties.
+            Onze monteurs voldoen al sinds december 2019 aan de eisen van de CO-certificering.
+            Laat u het onderhoud uitvoeren door een niet-gecertificeerde monteur, dan loopt u het risico dat uw verzekering niet uitkeert bij schade of incidenten.
+          </p>
+        </div>
 
-              <div className="grid grid-cols-2 gap-8">
-                <div className="text-center p-6 bg-gray-50 rounded-lg">
-                  <Users className="w-8 h-8 text-red-600 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-gray-900">500+</div>
-                  <div className="text-sm text-gray-600">Tevreden Klanten</div>
-                </div>
-                <div className="text-center p-6 bg-gray-50 rounded-lg">
-                  <Award className="w-8 h-8 text-red-600 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-gray-900">15+</div>
-                  <div className="text-sm text-gray-600">Jaar Ervaring</div>
-                </div>
+        {/* Toevoegen van de foto's */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Image src={"/images/cokeurmerk.jpg"} alt="Monteur aan het werk" width={500} height={300} className="rounded-lg object-cover" />
+          <Image src={"/images/merken.jpeg"} alt="Monteur inspectie" width={500} height={300} className="rounded-lg object-cover" />
+        </div>
+      </div>
+
+      <div className="relative">
+        <div className="bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-8 text-white">
+          <h3 className="text-2xl font-bold mb-6">Waarom Kiezen Voor Ons?</h3>
+          <div className="space-y-4">
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold">Gecertificeerde Monteurs</h4>
+                <p className="text-red-100 text-sm">Al onze monteurs zijn volledig gecertificeerd en ervaren</p>
               </div>
             </div>
-
-            <div className="relative">
-              <div className="bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Waarom Kiezen Voor Ons?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold">Gecertificeerde Monteurs</h4>
-                      <p className="text-red-100 text-sm">Al onze monteurs zijn volledig gecertificeerd en ervaren</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold">5 Jaar Garantie</h4>
-                      <p className="text-red-100 text-sm">Uitgebreide garantie op alle installaties</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold">24/7 Service</h4>
-                      <p className="text-red-100 text-sm">Altijd bereikbaar voor spoedgevallen</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold">Vaste Prijzen</h4>
-                      <p className="text-red-100 text-sm">Transparante prijzen zonder verrassingen</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold">5 Jaar Garantie</h4>
+                <p className="text-red-100 text-sm">Uitgebreide garantie op alle installaties</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold">24/7 Service</h4>
+                <p className="text-red-100 text-sm">Altijd bereikbaar voor spoedgevallen</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold">Vaste Prijzen</h4>
+                <p className="text-red-100 text-sm">Transparante prijzen zonder verrassingen</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       
       

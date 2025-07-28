@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Wrench, Shield, Clock, Phone } from "lucide-react"
+import Link from "next/link"
 
 interface ServicePackage {
   id: string
@@ -131,7 +132,9 @@ export default function Pricing() {
 </a>
 
                   ) : (
-                    <Button className="w-full bg-red-600 hover:bg-red-700 text-white mt-6">Kies Dit Pakket</Button>
+                    <Link href="/#contact" className="w-full">
+                    <Button className="w-full bg-red-600 hover:bg-red-700 text-white mt-6 cursor-pointer">Contact opnemen</Button>
+                    </Link>
                   )}
                 </CardContent>
               </Card>
