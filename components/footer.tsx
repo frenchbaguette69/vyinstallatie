@@ -66,7 +66,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} VY Installatie. Alle rechten voorbehouden.</p>
+          <p>&copy; {new Date().getFullYear()} VY Installatie. Alle rechten voorbehouden.</p> <a href="https://www.upseo.nl/website-laten-maken" target="_blank" rel="noopener noreferrer">website laten maken </a>
         </div>
       </div>
     </footer>
